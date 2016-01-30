@@ -4,7 +4,7 @@ using System.ServiceModel;
 using System.ServiceModel.Channels;
 using System.ServiceModel.Dispatcher;
 
-namespace ServerIntance
+namespace ServiceStack.ServerIntance
 {
     public class UnityInstanceProvider : IInstanceProvider
     {

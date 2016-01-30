@@ -47,6 +47,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Enyim.Caching">
+      <HintPath>..\External Dependencies\ServiceStack\net45\Enyim.Caching.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -80,6 +83,40 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.Unity, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\External Dependencies\Microsoft\Practices\Unity.2.1.505.0\NET\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\External Dependencies\Microsoft\Practices\Unity.2.1.505.0\NET\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack">
+      <HintPath>..\External Dependencies\ServiceStack\net45\ServiceStack.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.CacheAccess.Memcached">
+      <HintPath>..\External Dependencies\ServiceStack\net45\ServiceStack.CacheAccess.Memcached.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Common">
+      <HintPath>..\External Dependencies\ServiceStack\net45\ServiceStack.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces">
+      <HintPath>..\External Dependencies\ServiceStack\net45\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.OrmLite">
+      <HintPath>..\External Dependencies\ServiceStack\net45\ServiceStack.OrmLite.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.OrmLite.SqlServer">
+      <HintPath>..\External Dependencies\ServiceStack\net45\ServiceStack.OrmLite.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Redis">
+      <HintPath>..\External Dependencies\ServiceStack\net45\ServiceStack.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.ServiceInterface">
+      <HintPath>..\External Dependencies\ServiceStack\net45\ServiceStack.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text">
+      <HintPath>..\External Dependencies\ServiceStack\net45\ServiceStack.Text.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -120,6 +157,26 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ServiceIngenieria.cs" />
+    <Compile Include="UnityContainerAdapter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Aplicacion.BoundedContext\Aplicacion.BoundedContext.csproj">
+      <Project>{578fecbb-18ba-430e-a606-34e2c3b36ef7}</Project>
+      <Name>Aplicacion.BoundedContext</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Aplicacion.Core\Aplicacion.Core.csproj">
+      <Project>{84dc839d-67ed-4da2-93a0-a966f1a40e4d}</Project>
+      <Name>Aplicacion.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AplicacionDTO\AplicacionDTO.csproj">
+      <Project>{7d7dc695-331a-494f-83c2-ee1356bc8e2b}</Project>
+      <Name>AplicacionDTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServerIntance\ServerIntance.csproj">
+      <Project>{386d9509-ab74-48bc-aed8-e203646947b9}</Project>
+      <Name>ServerIntance</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

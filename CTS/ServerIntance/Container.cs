@@ -9,7 +9,7 @@ using CrossCutting.Validator;
 using Microsoft.Practices.Unity;
 using ServerIntance.ContainerRegistrations;
 
-namespace ServerIntance
+namespace ServiceStack.ServerIntance
 {
     public static class Container
     {
