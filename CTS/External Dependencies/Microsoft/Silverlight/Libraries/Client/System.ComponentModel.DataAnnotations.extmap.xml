@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<manifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <assembly>
+    <name>System.ComponentModel.DataAnnotations</name>
+    <version>5.0.5.0</version>
+    <publickeytoken>ddd0da4d3e678217</publickeytoken>
+    <relpath>System.ComponentModel.DataAnnotations.dll</relpath>
+    <extension downloadUri="System.ComponentModel.DataAnnotations.zip" />
+  </assembly>
+
+</manifest>

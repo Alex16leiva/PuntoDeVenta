@@ -1,0 +1,157 @@
+﻿<UserControl x:Class="Ingenieria.Silverlight.Cliente.Vistas.PlantaView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    DataContext="{Binding PlantaViewModel, Source={StaticResource Locator}}"
+    mc:Ignorable="d"
+    d:DesignHeight="768" d:DesignWidth="1024">
+
+    <Grid x:Name="LayoutRoot">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="185*"/>
+                <RowDefinition Height="70"/>
+            </Grid.RowDefinitions>
+
+            <!--  Animacion de los paneles  -->
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="VisualStateGroup">
+                    <VisualStateGroup.Transitions>
+                        <VisualTransition GeneratedDuration="0:0:0.3">
+                            <VisualTransition.GeneratedEasingFunction>
+                                <CubicEase EasingMode="EaseInOut" />
+                            </VisualTransition.GeneratedEasingFunction>
+                        </VisualTransition>
+                    </VisualStateGroup.Transitions>
+                    <VisualState x:Name="Normal"/>
+                    <VisualState x:Name="MostarBotonesAdd">
+                        <Storyboard>
+                            <DoubleAnimation Duration="0"
+                                         Storyboard.TargetName="MostrarAgregarGrid"
+                                         Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)"
+                                         To="278"
+                                         d:IsOptimized="True" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Rectangle" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Visibility>Visible</Visibility>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+
+            <!--<TextBlock Text="Administracion De Plantas" Style="{StaticResource Titulo Principal}" Margin="15,0,0,0"/>-->
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Margin="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="557*"/>
+                    </Grid.RowDefinitions>
+                    <!--<TextBlock Text="Plantas" Style="{StaticResource Titulo Secundario}" Margin="10,0,0,0"/>-->
+                    <ListBox Grid.Row="1" Margin="5" ItemsSource="{Binding ListaPlantas}" SelectedItem="{Binding PlantaSeleccionado, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" Margin="10">
+                                    <Path Data="M21.832001,24.424L21.832001,27.912998 26.218018,27.912998 26.218018,24.424z M13.757019,24.424L13.757019,27.912998 18.143005,27.912998 18.143005,24.424z M5.7820129,24.424L5.7820129,27.912998 10.167999,27.912998 10.167999,24.424z M1.8950195,6.3799964L3.8880005,6.3799964 4.1870117,17.745001 8.1750183,17.745001 8.1750183,13.956 16.050018,17.745001 16.149994,17.745001 16.149994,13.956 24.024994,17.745001 24.125,17.745001 24.125,13.956 32,17.745001 31.901001,17.745001 31.901001,31.103001 0,31.103001 0,17.745001 1.5950012,17.745001z M8.5740051,1.3959956C8.5740051,1.3959958 9.1719971,3.2899927 6.6800232,3.5889963 6.6800232,3.5889963 5.085022,3.6879953 4.2870178,4.4859993 4.2870178,4.4859993 3.9880066,4.7849952 3.8880005,4.4859993 3.8880005,4.4859993 3.9880066,3.0899958 6.480011,2.6919931 6.5800171,2.7909998 8.3740234,2.6919931 8.5740051,1.3959956z M5.5830078,0C5.5830078,-1.4470834E-07 6.8789978,1.4949948 4.5859985,2.6919931 4.5859985,2.6919931 3.1900024,3.2899927 2.6920166,4.3859931 2.6920166,4.3859931 2.5920105,4.7849952 2.2929993,4.4859993 2.2929993,4.4859993 1.8950195,3.1899942 4.0880127,1.8939967 4.1870117,1.9939953 5.882019,1.2959973 5.5830078,0z" 
+                                              Fill="Blue" />
+                                    <Grid Margin="5">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Text="{Binding PlantaId}" />
+                                        <TextBlock Grid.Row="1" Text="{Binding NombrePlanta}"/>
+                                    </Grid>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+
+                <Grid Margin="5" Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="557*"/>
+                    </Grid.RowDefinitions>
+                    <!--<TextBlock Text="Departamento" Style="{StaticResource Titulo Secundario}" Margin="10,0,0,0"/>-->
+                    <ListBox Grid.Row="1" Margin="5" ItemsSource="{Binding PlantaSeleccionado.Departamentos}" SelectedItem="{Binding DepartamentoSeleccionado, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" Margin="10">
+                                    <Path Data="M24.812608,17.734999L29.794602,22.317991 29.794602,28.096998C29.794602,28.296995 29.694627,28.496 29.495591,28.496 29.395616,28.594999 29.19658,28.594999 29.096604,28.594999L26.506639,28.594999C26.406602,28.594999 26.307603,28.594999 26.307603,28.496 26.207627,28.395994 26.207627,28.296995 26.207627,28.296995L26.207627,25.507002 23.616624,25.507002 23.616624,28.296995C23.616624,28.395994 23.616624,28.496 23.517625,28.496 23.417588,28.594999 23.317613,28.594999 23.317613,28.594999L20.727586,28.594999C20.62761,28.594999 20.428636,28.594999 20.328599,28.496 20.2296,28.395994 20.029588,28.296995 20.029588,28.096998L20.029588,22.317991z M24.812608,14.048995C25.011582,14.048995,25.310594,14.147994,25.41063,14.248L31.687608,19.927C32.085618,20.225996 32.085618,20.824003 31.787583,21.221998 31.488633,21.621 30.890611,21.621 30.491624,21.321989L24.912583,16.140989 19.332627,21.321989C19.133592,21.520994 18.93358,21.520994 18.734605,21.520994 18.435594,21.520994 18.236619,21.421995 18.037583,21.221998 17.738633,20.824003 17.738633,20.225996 18.136582,19.927L24.413621,14.248C24.314622,14.147994,24.613633,14.048995,24.812608,14.048995z M11.95958,5.9779965L20.129624,13.451003 20.129624,16.738997 16.8416,19.927C16.243638,20.425001 16.243638,21.421995 16.741624,22.020003 17.040635,22.317991 17.439622,22.518004 17.837632,22.518004 18.037583,22.518004 18.236619,22.417998 18.435594,22.317991L18.435594,24.111998 14.74962,24.111998C14.550584,24.111998 14.450608,24.011992 14.350633,23.912993 14.251634,23.813002 14.151597,23.613997 14.151597,23.513991L14.151597,18.830992 9.8676005,18.830992 9.8676005,23.513991C9.8676005,23.712996 9.7676249,23.813002 9.6675883,23.912993 9.5685893,24.011992 9.3686381,24.111998 9.2696391,24.111998L4.8856059,24.111998C4.6866313,24.111998 4.38762,24.011992 4.1876078,23.912993 3.9886332,23.813002 3.7895976,23.613997 3.7895973,23.214995L3.7895973,13.550002z M11.95958,0C12.357591,7.644303E-09,12.656602,0.099990847,12.955613,0.3990021L23.317613,9.8639976C23.915635,10.46199 24.015611,11.457992 23.417588,12.055999 22.819627,12.653991 21.823594,12.75299 21.225633,12.15599L11.859605,3.5869901 2.4946147,12.15599C2.1956034,12.453994 1.7966166,12.554 1.4976055,12.554 1.0995951,12.554 0.70060831,12.354995 0.40159705,12.055999 -0.19636434,11.457992 -0.096388758,10.46199 0.50163358,9.8639976L10.863633,0.3990021C11.261582,0.099990847,11.66063,7.644303E-09,11.95958,0z" 
+                                          Stretch="Uniform" Fill="Blue"/>
+                                    <Grid Margin="5">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <!--<TextBlock Text="{Binding DepartamentoId}" Style="{StaticResource ListBox Titulo Principal}" />-->
+                                        <!--<TextBlock Grid.Row="1" Text="{Binding NombreDepartamento}" Style="{StaticResource 'ListBox Titulo Secundario'}" />-->
+                                    </Grid>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+
+                <Grid Margin="5" Grid.Column="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="557*"/>
+                    </Grid.RowDefinitions>
+                    <!--<TextBlock Text="Procesos" Style="{StaticResource Titulo Secundario}" Margin="10,0,0,0"/>-->
+                    <ListBox Grid.Row="1" Margin="5" ItemsSource="{Binding DepartamentoSeleccionado.ProcesosPorDepartamentos}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" Margin="10">
+                                    <Path Data="M11.299979,24.800003C10.700004,24.800003 10.100029,25.100006 9.7000046,25.699997 9.10003,26.600006 9.4000168,27.800003 10.200005,28.300003 11.100028,28.900009 12.299978,28.600006 12.799978,27.800003 13.400014,26.900009 13.100026,25.699997 12.299978,25.199997 12.100027,24.900009 11.700003,24.800003 11.299979,24.800003z M11.200004,21.5L11.600028,23.100006 11.600028,23.199997C11.900015,23.199997,12.200003,23.300003,12.49999,23.400009L13.49999,22.100006 14.999989,23.100006 14.200001,24.5C14.400013,24.699997,14.600025,25,14.700001,25.199997L14.799976,25.199997 16.400012,25 16.7,26.699997 14.999989,27C14.999989,27.300003,14.900013,27.600006,14.799976,27.900009L16.100024,28.900009 15.100025,30.400009 13.700002,29.600006C13.49999,29.800003,13.200002,30,12.99999,30.100006L12.99999,30.199997 13.200002,31.800003 11.499991,32 10.999991,30.5C10.700004,30.5,10.400016,30.400009,10.100029,30.300003L9.10003,31.600006 7.6000309,30.600006 8.4000178,29.199997C8.2000056,29,7.9999933,28.699997,7.9000182,28.5L7.7999816,28.5 6.2000075,28.699997 5.9000197,27 7.4999943,26.600006 7.6000309,26.600006C7.6000309,26.300003,7.700006,26,7.7999816,25.699997L7.700006,25.699997 6.4000192,24.699997 7.4000187,23.199997 8.7999811,24C8.9999933,23.800003,9.2999802,23.600006,9.4999924,23.5L9.4999924,23.400009 9.2999802,21.800003z M24.199994,16.5C23.199994,16.5 22.29997,17.100006 21.900008,18 21.400008,19.199997 21.999984,20.699997 23.199994,21.199997 24.400006,21.699997 25.900004,21.100006 26.400004,19.900009 26.900004,18.699997 26.299968,17.199997 25.100017,16.699997 24.799968,16.600006 24.499982,16.5 24.199994,16.5z M22.79997,12.300003L23.699994,14.199997 23.699994,14.300003 24.799968,14.300003 24.799968,14.199997 25.799968,12.400009 27.900003,13.300003 27.19999,15.199997 27.19999,15.300003C27.499978,15.5,27.799966,15.800003,27.999978,16.100006L28.100015,16.100006 30.100013,15.400009 30.900001,17.5 29.100015,18.400009 28.999978,18.400009 28.999978,19.5 29.100015,19.5 30.900001,20.400009 29.999976,22.5 27.999978,21.900009 27.900003,21.900009C27.69999,22.199997,27.400003,22.5,27.100015,22.699997L27.100015,22.800003 27.799966,24.800003 25.699992,25.600006 24.799968,23.800003 24.799968,23.699997 23.699994,23.699997 23.699994,23.800003 22.79997,25.600006 20.699996,24.699997 21.299972,22.699997 21.299972,22.600006C20.999984,22.400009,20.699996,22.100006,20.499984,21.800003L20.400008,21.800003 18.40001,22.400009 17.600022,20.300003 19.499986,19.400009 19.600022,19.400009 19.600022,18.300003 19.499986,18.300003 17.699998,17.300003 18.600022,15.199997 20.499984,15.900009 20.60002,15.900009C20.799972,15.600006,21.10002,15.300003,21.400008,15.100006L21.400008,15 20.799972,13z M9.10003,5.6999969C7.2999821,5.6999969 5.799983,7.1999969 5.799983,9 5.799983,10.800003 7.2999821,12.300003 9.10003,12.300003 10.900016,12.300003 12.400015,10.800003 12.400015,9 12.400015,7.1999969 10.900016,5.6999969 9.10003,5.6999969z M7.6000309,0L10.700004,0 10.900016,2.8000031 10.900016,2.9000092C11.400016,3,11.900015,3.1999969,12.299978,3.5L12.400015,3.4000092 14.499989,1.5 16.7,3.6999969 14.900013,5.9000092 14.799976,6C15.100025,6.4000092,15.299976,6.9000092,15.400012,7.4000092L15.499988,7.4000092 18.299974,7.6000061 18.299974,10.699997 15.499988,10.900009 15.400012,10.900009C15.299976,11.400009,15.100025,11.900009,14.799976,12.300003L14.900013,12.400009 16.799975,14.5 14.600025,16.699997 12.400015,14.900009 12.299978,14.800003C11.900015,15.100006,11.400016,15.199997,10.900016,15.400009L10.900016,15.5 10.700004,18.300003 7.6000309,18.300003 7.4000187,15.5 7.4000187,15.400009C6.9000192,15.300003,6.4000192,15.100006,5.9999953,14.800003L5.9000197,14.900009 3.799985,16.699997 1.6000352,14.5 3.4999972,12.400009 3.6000338,12.300003C3.2999852,11.900009,3.2000096,11.400009,2.9999976,10.900009L2.7999859,10.900009 0,10.600006 0,7.5 2.7999859,7.3000031 2.9000221,7.3000031C2.9999976,6.8000031,3.2000096,6.3000031,3.4999972,5.9000092L3.4000221,5.9000092 1.6000352,3.6999969 3.799985,1.5 5.9000197,3.4000092 5.9999953,3.5C6.4000192,3.1999969,6.7999826,3,7.2999821,2.9000092L7.2999821,2.8000031z" Stretch="Uniform" Fill="Blue"/>
+                                    <!--<TextBlock Text="{Binding ProcesoId}" Style="{StaticResource 'ListBox Titulo Principal'}" Margin="10,0,0,0"/>-->
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+
+            </Grid>
+
+            <Grid Grid.Row="2" Background="#FF937070" Margin="10,0,0,0">
+                <StackPanel HorizontalAlignment="Left">
+                    <Grid Margin="5,5,5,10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Button  Command="{Binding MostrarAddCommand}" Style="{StaticResource AgregarBlanco}"/>
+                        <TextBlock Grid.Row="1" Text="Agregar" Style="{StaticResource TituloBotonBlanco}"/>
+                    </Grid>
+                </StackPanel>
+            </Grid>
+
+        </Grid>
+        <Grid x:Name="MostrarAgregarGrid" HorizontalAlignment="Right" Height="92" Margin="0,0,-278,0" Width="273">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Button Content="Planta"/>
+            <Button Content="Departamento" Grid.Row="1" />
+            <Button Content="Proceso A Departamento" Grid.Row="2"/>
+            <Button Content="ProcesoId" Grid.Row="3"/>
+        </Grid>
+
+    </Grid>
+</UserControl>

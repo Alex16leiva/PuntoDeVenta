@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3db7917d-8728-4fa6-ab2a-4489f867d328" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:58023/Ingenieria/PlantaServices/PlantaModelService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PlantaModelService.xsd" MetadataType="Schema" ID="940c5200-a117-42f6-a782-0796b5ba4c53" SourceId="1" SourceUrl="http://localhost:58023/Ingenieria/PlantaServices/PlantaModelService.svc?xsd=xsd2" />
+    <MetadataFile FileName="PlantaModelService1.xsd" MetadataType="Schema" ID="d92e4865-1287-4553-a889-a38611d93c08" SourceId="1" SourceUrl="http://localhost:58023/Ingenieria/PlantaServices/PlantaModelService.svc?xsd=xsd0" />
+    <MetadataFile FileName="PlantaModelService.disco" MetadataType="Disco" ID="2469993a-efbc-4710-bdaf-7e63684004c9" SourceId="1" SourceUrl="http://localhost:58023/Ingenieria/PlantaServices/PlantaModelService.svc?disco" />
+    <MetadataFile FileName="PlantaModelService.wsdl" MetadataType="Wsdl" ID="e3b9e3e8-943e-4f1f-b866-a0a06b3e0c88" SourceId="1" SourceUrl="http://localhost:58023/Ingenieria/PlantaServices/PlantaModelService.svc?wsdl" />
+    <MetadataFile FileName="PlantaModelService2.xsd" MetadataType="Schema" ID="5334e567-4cb5-4eb3-b000-1d48b902f229" SourceId="1" SourceUrl="http://localhost:58023/Ingenieria/PlantaServices/PlantaModelService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

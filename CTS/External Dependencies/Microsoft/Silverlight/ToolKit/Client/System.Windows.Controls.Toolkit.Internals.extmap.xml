@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<manifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <assembly>
+    <name>System.Windows.Controls.Toolkit.Internals</name>
+    <version>4.0.5.0</version>
+    <publickeytoken>31bf3856ad364e35</publickeytoken>
+    <relpath>System.Windows.Controls.Toolkit.Internals.dll</relpath>
+    <extension downloadUri="System.Windows.Controls.Toolkit.Internals.zip" />
+  </assembly>
+</manifest>

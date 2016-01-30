@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<manifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <assembly>
+    <name>SLVisifire.Gauges</name>
+    <version>5.1.7.0</version>
+    <publickeytoken>a9b844f23a65a5c</publickeytoken>
+    <relpath>SLVisifire.Gauges.dll</relpath>
+    <extension downloadUri="SLVisifire.Gauges.zip" />
+  </assembly>
+</manifest>

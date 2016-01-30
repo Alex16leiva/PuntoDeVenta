@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<manifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <assembly>
+    <name>Microsoft.Practices.EnterpriseLibrary.Common.Silverlight</name>
+    <version>5.0.505.0</version>
+    <publickeytoken>31bf3856ad364e35</publickeytoken>
+    <relpath>Microsoft.Practices.EnterpriseLibrary.Common.Silverlight.dll</relpath>
+    <extension downloadUri="Microsoft.Practices.EnterpriseLibrary.Common.Silverlight.zip" />
+  </assembly>
+</manifest>

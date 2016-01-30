@@ -1,0 +1,119 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib"
+                    xmlns:systemWindowsControlsPrimitives="clr-namespace:System.Windows.Controls.Primitives;assembly=System.Windows.Controls"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+                    xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+                    xmlns:inputtoolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit"
+                    xmlns:System="clr-namespace:System;assembly=mscorlib"
+                    mc:Ignorable="d">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Brushes.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    
+    <!-- Button Style  -->
+    <Style x:Key="AppBarButtonStyle" TargetType="Button">
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="MinWidth" Value="40" />
+        <Setter Property="Width" Value="40" />
+        <Setter Property="Height" Value="40" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Canvas x:Name="BackButton">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0"
+                                                         Storyboard.TargetName="MouseOverEllipse"
+                                                         Storyboard.TargetProperty="(UIElement.Opacity)"
+                                                         To="1" />
+                                        <ColorAnimation Duration="0"
+                                                        Storyboard.TargetName="MouseOverEllipse"
+                                                        Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)"
+                                                        To="#FF10A151"
+                                                        d:IsOptimized="True" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0"
+                                                         Storyboard.TargetName="PressedEllipse"
+                                                         Storyboard.TargetProperty="(UIElement.Opacity)"
+                                                         To="1" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0"
+                                                         Storyboard.TargetName="BackButton"
+                                                         Storyboard.TargetProperty="(UIElement.Opacity)"
+                                                         To="0.35" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Unfocused" />
+                                <VisualState x:Name="Focused" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Ellipse x:Name="PressedEllipse"
+                                 Width="40"
+                                 Height="40"
+                                 Fill="{StaticResource HighlightBrush}"
+                                 Opacity="0"
+                                 StrokeThickness="0" />
+                        <Ellipse x:Name="MouseOverEllipse"
+                                 Width="40"
+                                 Height="40"
+                                 Fill="#7F8D8D8D"
+                                 Opacity="0"
+                                 StrokeThickness="2" />
+                        <Ellipse x:Name="ellipse"
+                                 Width="40"
+                                 Height="40"
+                                 Stroke="{StaticResource ControlBackgroundBrush}"
+                                 StrokeThickness="2" />
+
+                        <Path Canvas.Left="9.269"
+                              Canvas.Top="12.263"
+                              Width="20.928"
+                              Height="16.477"
+                              HorizontalAlignment="Center"
+                              VerticalAlignment="Center"
+                              Data="{TemplateBinding Content}"
+                              Fill="{StaticResource ControlBackgroundBrush}"
+                              Stretch="Uniform" />
+
+                    </Canvas>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="EditarBlacon"
+           BasedOn="{StaticResource AppBarButtonStyle}"
+           TargetType="Button">
+        <Setter Property="Content" Value="F1 M 26.9999,16.0001L 31.9999,21.0001L 20,33L 15,28L 26.9999,16.0001 Z M 32.9497,19.9999L 28,15.0501L 30.1213,12.9288C 30.9024,12.1477 32.1687,12.1477 32.9498,12.9288L 35.0711,15.0501C 35.8521,15.8312 35.8521,17.0975 35.0711,17.8785L 32.9497,19.9999 Z M 13.75,34.7499L 13.25,34.2499L 14.5625,30.0624L 17.9376,33.4374L 13.75,34.7499 Z " />
+    </Style>
+
+    <Style
+        x:Key="AgregarBlanco"
+        BasedOn="{StaticResource AppBarButtonStyle}"
+        TargetType="Button">
+        <Setter
+            Property="Content"
+            Value="F1 M 22,12L 26,12L 26,22L 36,22L 36,26L 26,26L 26,36L 22,36L 22,26L 12,26L 12,22L 22,22L 22,12 Z" />
+    </Style>    
+    
+    <!-- Text Style-->
+    <Style x:Key="TituloBotonBlanco" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+
+</ResourceDictionary>

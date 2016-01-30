@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<manifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <assembly>
+    <name>SLVisifire.Charts</name>
+    <version>5.1.7.0</version>
+    <publickeytoken>e1555b29ff71bd3</publickeytoken>
+    <relpath>SLVisifire.Charts.dll</relpath>
+    <extension downloadUri="SLVisifire.Charts.zip" />
+  </assembly>
+</manifest>

@@ -1,0 +1,17 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="BasicHttpBinding_IPlantaModelService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+            </basicHttpBinding>
+        </bindings>
+        <client>
+            <endpoint address="../Ingenieria/PlantaServices/PlantaModelService.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IPlantaModelService"
+                contract="PlantaService.IPlantaModelService" name="BasicHttpBinding_IPlantaModelService" />
+        </client>
+    </system.serviceModel>
+</configuration>
